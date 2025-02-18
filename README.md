@@ -1,71 +1,63 @@
-## 배포 아키텍쳐
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/d4ccc3ae-d31a-4140-b9c4-b12fb49b0284" />
+# AWS S3 정적 웹사이트 배포 문서
+
+## 배포 아키텍처
+<img width="627" alt="AWS 배포 아키텍처" src="https://github.com/user-attachments/assets/d4ccc3ae-d31a-4140-b9c4-b12fb49b0284" />
+
+## 목차
+* [주요 링크](#주요-링크)
+* [GitHub Actions와 CI/CD](#github-actions와-cicd)
+* [S3와 Storage](#s3와-storage) 
+* [CloudFront와 CDN](#cloudfront와-cdn)
+* [캐시 무효화](#캐시-무효화)
+* [Repository Secret과 환경변수](#repository-secret과-환경변수)
 
 ## 주요 링크
-- AWS S3 버킷 웹사이트 엔드포인트
-  
-  http://hanghae99-s3-4th.s3-website.ap-northeast-2.amazonaws.com
-- CloudFront 배포 도메인
 
-  https://d1bswzikqo4to6.cloudfront.net
+🔗 **웹사이트 엔드포인트**
+- AWS S3 버킷: http://hanghae99-s3-4th.s3-website.ap-northeast-2.amazonaws.com
+- CloudFront: https://d1bswzikqo4to6.cloudfront.net
 
-## 주요 개념
-- GitHub Actions와 CI/CD도구
-- S3와 Storage
-- CloudFront 와 CDN
-- 캐시 무효화
-- Repository secret과 환경변수
+## GitHub Actions와 CI/CD
 
+GitHub Actions는 GitHub에서 제공하는 CI/CD 플랫폼으로, 코드의 빌드, 테스트, 배포 과정을 자동화할 수 있습니다. YAML 파일을 통해 워크플로우를 정의하여 사용합니다.
 
+### 주요 특징
+* 워크플로우 자동화
+* 이벤트 기반 실행 (push, pull request 등)
+* YAML 기반 설정
 
+### CI/CD 개념
 
+**📦 Continuous Integration (지속적 통합)**
+* 여러 개발자의 코드 변경사항을 정기적으로 통합
+* 자동 테스트 실행으로 버그 조기 발견
+* 코드 품질 유지
 
+**🚀 Continuous Deployment (지속적 배포)**
+* 배포 과정 자동화로 인적 오류 최소화
+* 코드 변경 시 자동 배포 (예: AWS S3)
+* 빠른 피드백과 반복 가능한 배포 프로세스
 
+## S3와 Storage
 
+Amazon S3(Simple Storage Service)는 확장 가능한 객체 스토리지 서비스입니다. 정적 웹사이트 호스팅에 활용할 수 있으며, 높은 내구성과 가용성을 제공합니다.
 
+### 주요 기능
+* 정적 웹사이트 호스팅
+* 버전 관리
+* 접근 제어
+* 데이터 암호화
 
+## CloudFront와 CDN
 
+CloudFront는 AWS의 CDN(Content Delivery Network) 서비스입니다. 전 세계 엣지 로케이션을 통해 콘텐츠를 캐싱하고 배포하여 웹사이트의 성능을 향상시킵니다.
 
+### 장점
+* 빠른 콘텐츠 전송
+* 글로벌 배포
+* HTTPS 지원
+* DDoS 방어
 
+## 캐시 무효화
 
-
-
-
-
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+CloudFront의 캐시 무효화(Invalidation)를 통해 엣지 로케이션에 저장된 콘텐츠를 갱신할 수 있습니다. 
