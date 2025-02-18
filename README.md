@@ -1,3 +1,38 @@
+## 배포 아키텍쳐
+<img width="627" alt="image" src="https://github.com/user-attachments/assets/d4ccc3ae-d31a-4140-b9c4-b12fb49b0284" />
+
+## 주요 링크
+- AWS S3 버킷 웹사이트 엔드포인트
+  
+  http://hanghae99-s3-4th.s3-website.ap-northeast-2.amazonaws.com
+- CloudFront 배포 도메인
+
+  https://d1bswzikqo4to6.cloudfront.net
+
+## 주요 개념
+- GitHub Actions와 CI/CD도구
+- S3와 Storage
+- CloudFront 와 CDN
+- 캐시 무효화
+- Repository secret과 환경변수
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
