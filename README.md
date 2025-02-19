@@ -19,7 +19,7 @@
 
 ## GitHub Actions와 CI/CD
 
-GitHub Actions는 GitHub에서 제공하는 CI/CD 플랫폼으로, 코드의 빌드, 테스트, 배포 과정을 자동화할 수 있습니다. YAML 파일을 통해 워크플로우를 정의하여 사용합니다.
+GitHub에서 제공하는 자동화된 워크플로우 도구입니다. 코드가 리포지토리에 푸시되면 자동으로 빌드, 테스트, 배포 등의 작업을 수행할 수 있습니다. workflow 파일(.github/workflows/*.yml)을 통해 설정하며, 테스트 실행, 코드 품질 검사, 패키지 배포 등 다양한 CI/CD 작업을 자동화할 수 있습니다.
 
 ### 주요 특징
 * 워크플로우 자동화
@@ -40,7 +40,7 @@ GitHub Actions는 GitHub에서 제공하는 CI/CD 플랫폼으로, 코드의 빌
 
 ## S3와 Storage
 
-Amazon S3(Simple Storage Service)는 확장 가능한 객체 스토리지 서비스입니다. 정적 웹사이트 호스팅에 활용할 수 있으며, 높은 내구성과 가용성을 제공합니다.
+Amazon S3(Simple Storage Service)는 AWS에서 제공하는 클라우드 스토리지 서비스입니다. 정적 웹사이트 호스팅, 데이터 백업, 미디어 파일 저장 등에 사용됩니다. 버킷이라는 컨테이너에 객체(파일)를 저장하며, 높은 내구성과 가용성을 제공합니다.
 
 ### 주요 기능
 * 정적 웹사이트 호스팅
@@ -50,7 +50,7 @@ Amazon S3(Simple Storage Service)는 확장 가능한 객체 스토리지 서비
 
 ## CloudFront와 CDN
 
-CloudFront는 AWS의 CDN(Content Delivery Network) 서비스입니다. 전 세계 엣지 로케이션을 통해 콘텐츠를 캐싱하고 배포하여 웹사이트의 성능을 향상시킵니다.
+Amazon CloudFront는 AWS의 CDN(Content Delivery Network) 서비스입니다. 전 세계에 분산된 엣지 로케이션을 통해 콘텐츠를 캐싱하고 사용자에게 가장 가까운 위치에서 콘텐츠를 제공함으로써 지연 시간을 줄이고 성능을 향상시킵니다.
 
 ### 장점
 * 빠른 콘텐츠 전송
@@ -60,4 +60,8 @@ CloudFront는 AWS의 CDN(Content Delivery Network) 서비스입니다. 전 세�
 
 ## 캐시 무효화
 
-CloudFront의 캐시 무효화(Invalidation)를 통해 엣지 로케이션에 저장된 콘텐츠를 갱신할 수 있습니다. 
+CloudFront에 캐시된 콘텐츠를 강제로 업데이트하는 프로세스입니다. 원본 콘텐츠가 변경되었을 때 캐시된 이전 버전을 제거하고 새로운 콘텐츠로 업데이트하기 위해 사용됩니다. 특정 파일 경로나 와일드카드 패턴을 지정하여 무효화할 수 있습니다.
+
+## Repository secret과 환경변수
+
+GitHub 리포지토리에서 민감한 정보(API 키, 액세스 토큰 등)를 안전하게 저장하고 사용하기 위한 기능입니다. 리포지토리의 Settings에서 설정할 수 있으며, GitHub Actions 워크플로우에서 환경변수로 사용할 수 있습니다. 암호화되어 저장되며 권한이 있는 사용자만 접근할 수 있습니다.
