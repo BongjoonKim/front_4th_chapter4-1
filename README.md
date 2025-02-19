@@ -1,7 +1,7 @@
 # AWS S3 정적 웹사이트 배포 문서
 
 ## 배포 아키텍처
-<img width="627" alt="AWS 배포 아키텍처" src="https://github.com/user-attachments/assets/d4ccc3ae-d31a-4140-b9c4-b12fb49b0284" />
+<img width="608" alt="image" src="https://github.com/user-attachments/assets/0765362f-68e1-4c61-9f08-e013dace9594" />
 
 ## 목차
 * [주요 링크](#주요-링크)
